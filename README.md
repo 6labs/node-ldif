@@ -30,7 +30,7 @@ Install easily with *npm*!
 
 ##### Parsing strings
 ```javascript
-var ldif = require('ldif'),
+var ldif = require('ldif-hufsm'),
     file = './rfc/example1.ldif',
     input = require('fs').readFileSync(file,'utf8');
 
@@ -42,7 +42,7 @@ There's also a shorthand to read in a file (synchronously, as above):
 
 ##### File parsing shorthand
 ```javascript
-var ldif = require('ldif');
+var ldif = require('ldif-hufsm');
 console.log(ldif.parseFile('./rfc/example1.ldif'));
 ```
 
@@ -51,7 +51,7 @@ In this case, example1.ldif specifies contents of two LDAP records.
 
 ##### Shifting records from parsed file
 ```javascript
-var ldif = require('ldif');
+var ldif = require('ldif-hufsm');
     file = ldif.parseFile('./rfc/example1.ldif');
 
 var record = file.shift();
@@ -63,7 +63,7 @@ property for all objects, but they can also be tested for
 specific constructor types:
 
 ```javascript
-var ldif = require('ldif');
+var ldif = require('ldif-hufsm');
     file = ldif.parseFile('./rfc/example1.ldif');
 
 (file instanceof ldif.Container)        === true
@@ -74,7 +74,7 @@ var ldif = require('ldif');
 
 ##### Record to plain object
 ```javascript
-var ldif = require('ldif');
+var ldif = require('ldif-hufsm');
     file = ldif.parseFile('./rfc/example1.ldif'),
     output_options = {};
 
@@ -118,7 +118,7 @@ All parsed data can be written back to LDIF format using a
 `toLDIF()` method (on files or entries).
 
 ```javascript
-var ldif = require('ldif');
+var ldif = require('ldif-hufsm');
     file = ldif.parseFile('./rfc/example1.ldif');
 
 // the whole file
